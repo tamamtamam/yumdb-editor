@@ -1,6 +1,6 @@
 import React from 'react';
 import {Form, Select, InputNumber, DatePicker, Switch, Slider, Button} from 'antd';
-import './App.css';
+import ab from'./App.less';
 
 const {Option} = Select;
 
