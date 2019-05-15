@@ -1,11 +1,11 @@
 import React from 'react';
 import {Form, Select, InputNumber, DatePicker, Switch, Slider, Button} from 'antd';
-import ab from'./App.less';
+import './App.less';
 
 const {Option} = Select;
 
 const App = () => (
-    <Form style={{marginTop: 32}}>
+    <Form className="cusform">
         <Form.Item
             label="Digital input box"
             labelCol={{span: 8}}
