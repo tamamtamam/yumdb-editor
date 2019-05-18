@@ -7,10 +7,12 @@
 import React from 'react';
 import UIFooter from "../index";
 import {Layout, Icon} from 'antd';
+import i18n from '../../../locales/i18n';
+import { withTranslation } from 'react-i18next';
 
 const {Footer} = Layout;
 
-const FooterView = () => {
+const FooterView = ({ t }) => {
     const links = [
         {
             key: 'link1',
@@ -34,9 +36,12 @@ const FooterView = () => {
     const copyright = (<>Copyright <Icon type="copyright"/> 2019 Yumcoder</>);
     return (
         <Footer>
+            {t('app.footer.welcome')}
+            <p onClick={() => i18n.changeLanguage('fa')}>fa</p>
+            <p onClick={() => i18n.changeLanguage('en')}>en</p>
             <UIFooter links={links} copyright={copyright}/>
         </Footer>
     );
 };
 
-export default FooterView;
+export default withTranslation()(FooterView);
