@@ -29,7 +29,7 @@ const useForm = pipe(
     )
 );
 
-function Form() {
+const Form = () => {
     const {
         value, submitted,
         handlers: { onChange, onSubmit },
@@ -46,7 +46,7 @@ function Form() {
             </form>
         </div>
     );
-}
+};
 
 it('test namespace', () => {
     const wrapper = mount(<Form />);
