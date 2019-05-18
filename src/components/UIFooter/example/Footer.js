@@ -36,7 +36,7 @@ const FooterView = ({ t }) => {
     const copyright = (<>Copyright <Icon type="copyright"/> 2019 Yumcoder</>);
     return (
         <Footer>
-            {t('Welcome to React')}
+            {t('app.footer.welcome')}
             <p onClick={() => i18n.changeLanguage('fa')}>fa</p>
             <p onClick={() => i18n.changeLanguage('en')}>en</p>
             <UIFooter links={links} copyright={copyright}/>
