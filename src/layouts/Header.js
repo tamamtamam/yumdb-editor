@@ -4,7 +4,7 @@ import { Layout, message } from 'antd';
 import Animate from 'rc-animate';
 //import { connect } from 'dva';
 //import router from 'umi/router';
-import GlobalHeader from '../components/GlobalHeader';
+import GlobalHeader from '../components/UIHeader';
 import TopNavHeader from '../components/TopNavHeader';
 import styles from './Header.less';
 

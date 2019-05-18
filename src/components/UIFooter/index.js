@@ -7,7 +7,7 @@
 import React from 'react';
 import { Button } from 'antd';
 import classNames from 'classnames';
-import styles from './style.module.less';
+import styles from './index.module.less';
 
 const UIFooter = ({ className, links, copyright }) => {
   const clsString = classNames(styles.uiFooter, className);
