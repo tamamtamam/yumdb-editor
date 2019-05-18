@@ -6,7 +6,7 @@ import styles from './App.less';
 console.log('styles --> ', styles);
 
 const App = () => (
-    <FooterView/>
+    <FooterView />
 );
 
 export default App;
