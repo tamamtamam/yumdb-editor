@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import classNames from 'classnames';
+import { withRouter } from 'react-router-dom'
 import { Menu, Icon } from 'antd';
 //import Link from 'umi/link';
 import { urlToList } from '../_utils/pathTools';
@@ -28,7 +29,7 @@ const getIcon = icon => {
   return icon;
 };
 
-export default class BaseMenu extends PureComponent {
+class BaseMenu extends PureComponent {
   /**
    * 获得菜单子节点
    * @memberof SiderMenu
@@ -96,7 +97,7 @@ export default class BaseMenu extends PureComponent {
         </a>
       );
     }
-    const { location, isMobile, onCollapse } = this.props;
+    const { location, isMobile, onCollapse, history } = this.props;
     return (
       <a
         to={itemPath}
@@ -107,7 +108,7 @@ export default class BaseMenu extends PureComponent {
             ? () => {
                 onCollapse(true);
               }
-            : undefined
+            : () => history.push(itemPath)//undefined
         }
       >
         {icon}
@@ -181,3 +182,6 @@ export default class BaseMenu extends PureComponent {
     );
   }
 }
+
+
+export default withRouter(BaseMenu)

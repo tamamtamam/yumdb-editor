@@ -117,7 +117,46 @@ export default class BasicLayout extends React.Component {
     } = this.props;
 
     // Majid :)
-    let menuData = [ { path: '/foo' } ]
+    let menuData = [ 
+        {   
+            icon: "dashboard",
+            locale: "menu.dashboard",
+            name: "Dashboard",
+            path: "/dashboard",
+            children: [
+                {   
+                    icon: "dashboard",
+                    locale: "menu.foo",
+                    name: "Main",
+                    path: "/",
+                },
+                {   
+                    icon: "dashboard",
+                    locale: "menu.foo",
+                    name: "Foo",
+                    path: "/foo",
+                },
+                {   
+                    icon: "dashboard",
+                    locale: "menu.bar",
+                    name: "Bar",
+                    path: "/bar",
+                }
+            ]
+        },
+        {   
+            icon: "dashboard",
+            locale: "menu.foo",
+            name: "Foo",
+            path: "/foo",
+        },
+        {   
+            icon: "dashboard",
+            locale: "menu.bar",
+            name: "Bar",
+            path: "/bar",
+        }
+    ]
     let breadcrumbNameMap = {}
     let pathname = {}
 
@@ -135,7 +174,6 @@ export default class BasicLayout extends React.Component {
             {...this.props}
 
             // Majid :)
-            menuData={menuData}
             breadcrumbNameMap={breadcrumbNameMap}
             location={{pathname: '/foo'}}
           />

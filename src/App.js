@@ -5,11 +5,11 @@ import routes from './config/router.config';
 import styles from './App.less';
 
 const App = () => (
-	<BasicLayout>
-		<Router>
+	<Router>
+		<BasicLayout>
 			{routes.map((r, i) => <Route exact path={r.path} component={r.component} /> )}
-		</Router>
-	</BasicLayout>
+		</BasicLayout>
+	</Router>
 );
 
 export default App;
