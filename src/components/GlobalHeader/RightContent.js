@@ -152,7 +152,7 @@ class GlobalHeaderRight extends PureComponent {
           //   event: formatMessage({ id: 'component.globalHeader.event' }),
           // }}
           onClear={onNoticeClear}
-          onPopupVisibleChange={onNoticeVisibleChange}
+          // onPopupVisibleChange={onNoticeVisibleChange}
           onViewMore={() => message.info('Click on view more')}
           clearClose
         >
