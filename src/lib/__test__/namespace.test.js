@@ -9,7 +9,7 @@ import pipe from '../pipe';
 import namespace from '../namespace';
 import withHandlers from '../withHandlers';
 import withState from '../withState';
-import {mount} from 'enzyme';
+import { mount } from 'enzyme';
 
 const useForm = pipe(
     withState('value', 'updateValue', ''),
@@ -32,7 +32,7 @@ const useForm = pipe(
 const Form = () => {
     const {
         value, submitted,
-        handlers: {onChange, onSubmit},
+        handlers: { onChange, onSubmit },
     } = useForm();
 
     return (
@@ -41,7 +41,7 @@ const Form = () => {
             <form onSubmit={onSubmit}>
                 <label>
                     Value
-                    <input type="text" value={value} onChange={onChange}/>
+                    <input type="text" value={value} onChange={onChange} />
                 </label>
             </form>
         </div>
@@ -49,11 +49,11 @@ const Form = () => {
 };
 
 it('test namespace', () => {
-    const wrapper = mount(<Form/>);
+    const wrapper = mount(<Form />);
 
     expect(wrapper.find('p').text()).toEqual('value: , submitted: 0');
 
-    wrapper.find('input').simulate('change', {target: {value: 'Hello'}});
+    wrapper.find('input').simulate('change', { target: { value: 'Hello' } });
     wrapper.find('form').simulate('submit');
 
     expect(wrapper.find('p').text()).toEqual('value: Hello, submitted: 1');
