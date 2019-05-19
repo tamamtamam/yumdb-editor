@@ -15,6 +15,7 @@ function usePrevious(value) {
 
     return ref.current;
 }
+
 /**
  * @param {object} spec
  * @returns {object}

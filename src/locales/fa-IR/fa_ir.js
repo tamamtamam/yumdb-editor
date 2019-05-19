@@ -1,5 +1,5 @@
 const tr = {
-	"app.footer.welcome": "خوش آمدید"
-}
+    "app.footer.welcome": "خوش آمدید"
+};
 
-export default { translation: tr };
+export default {translation: tr};
