@@ -7,7 +7,7 @@
 import React from 'react';
 import UIFooter from "../index";
 import {Layout, Icon} from 'antd';
-import i18n from '../../../locales/i18n';
+import i18n from '../../../locales';
 import { withTranslation } from 'react-i18next';
 
 const {Footer} = Layout;
