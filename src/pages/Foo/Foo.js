@@ -1,5 +1,5 @@
 import React from 'react';
-import i18n from '../../locales/i18n';
+import i18n from '../../locales';
 import { withTranslation } from 'react-i18next';
 
 const Foo = ({ t }) => {

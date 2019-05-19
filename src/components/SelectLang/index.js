@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 // import { formatMessage, setLocale, getLocale } from 'umi-plugin-react/locale';
-import i18n from '../../locales/i18n';
+import i18n from '../../locales';
 import { Menu, Icon } from 'antd';
 import classNames from 'classnames';
 import HeaderDropdown from '../HeaderDropdown';
