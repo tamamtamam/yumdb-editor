@@ -7,20 +7,20 @@ import RightContent from './RightContent';
 
 export default class GlobalHeader extends PureComponent {
   componentWillUnmount() {
-    this.triggerResizeEvent.cancel();
+    // this.triggerResizeEvent.cancel();
   }
   /* eslint-disable*/
   //@Debounce(600)
   triggerResizeEvent() {
     // eslint-disable-line
-    const event = document.createEvent('HTMLEvents');
-    event.initEvent('resize', true, false);
-    window.dispatchEvent(event);
+    // const event = document.createEvent('HTMLEvents');
+    // event.initEvent('resize', true, false);
+    // window.dispatchEvent(event);
   }
   toggle = () => {
-    const { collapsed, onCollapse } = this.props;
-    onCollapse(!collapsed);
-    this.triggerResizeEvent();
+    // const { collapsed, onCollapse } = this.props;
+    // onCollapse(!collapsed);
+    // this.triggerResizeEvent();
   };
   render() {
     const { collapsed, isMobile, logo } = this.props;

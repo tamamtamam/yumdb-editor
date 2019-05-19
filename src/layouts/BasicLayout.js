@@ -4,7 +4,7 @@ import DocumentTitle from 'react-document-title';
 //import { connect } from 'dva';
 import { ContainerQuery } from 'react-container-query';
 import classNames from 'classnames';
-import Media from 'react-media';
+// import Media from 'react-media';
 import logo from '../assets/logo.svg';
 import Footer from './Footer';
 import Header from './Header';
@@ -45,10 +45,10 @@ const query = {
 
 export default class BasicLayout extends React.Component {
   componentDidMount() {
-    const {
-      dispatch,
-      route: { routes, path, authority },
-    } = this.props;
+    // const {
+    //   dispatch,
+    //   route: { routes, path, authority },
+    // } = this.props;
     // dispatch({
     //   type: 'user/fetchCurrent',
     // });
@@ -80,11 +80,11 @@ export default class BasicLayout extends React.Component {
   };
 
   handleMenuCollapse = collapsed => {
-    const { dispatch } = this.props;
-    dispatch({
-      type: 'global/changeLayoutCollapsed',
-      payload: collapsed,
-    });
+    // const { dispatch } = this.props;
+    // dispatch({
+    //   type: 'global/changeLayoutCollapsed',
+    //   payload: collapsed,
+    // });
   };
 
   renderSettingDrawer = () => {
@@ -104,12 +104,16 @@ export default class BasicLayout extends React.Component {
       navTheme,
       layout: PropsLayout,
       children,
-      location: { pathname },
+      // location: { pathname },
       isMobile,
-      menuData,
-      breadcrumbNameMap,
+      // menuData,
+      // breadcrumbNameMap,
       fixedHeader,
     } = this.props;
+
+    let menuData = [ { path: '/foo' } ]
+    let breadcrumbNameMap = {}
+    let pathname = {}
 
     const isTop = PropsLayout === 'topmenu';
     const contentStyle = !fixedHeader ? { paddingTop: 0 } : {};
@@ -123,6 +127,12 @@ export default class BasicLayout extends React.Component {
             menuData={menuData}
             isMobile={isMobile}
             {...this.props}
+
+            menuData={menuData}
+            breadcrumbNameMap={breadcrumbNameMap}
+            pathname={pathname}
+            location={{pathname: '/foo'}}
+
           />
         )}
         <Layout
@@ -137,6 +147,7 @@ export default class BasicLayout extends React.Component {
             logo={logo}
             isMobile={isMobile}
             {...this.props}
+            setting={ {navTheme:'', layout:'', fixedHeader:''} }
           />
           <Content className={styles.content} style={contentStyle}>
             {children}
