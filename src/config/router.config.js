@@ -1,11 +1,11 @@
-import FooterView from '../components/UIFooter/example/Footer'
+import Dashboard from '../pages/Dashboard/Dashboard'
 import Foo from '../pages/Foo/Foo'
 import Bar from '../pages/Bar/Bar'
 
 const routes = [
 	{
 		path: '/',
-		component: FooterView
+		component: Dashboard
 	},
 	{
 		path: '/foo',
