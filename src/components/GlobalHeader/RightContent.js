@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-// import { FormattedMessage, formatMessage } from 'umi-plugin-react/locale';
+import { withTranslation } from 'react-i18next';
 import { Spin, Tag, Menu, Icon, Avatar, Tooltip, message } from 'antd';
 import moment from 'moment';
 import groupBy from 'lodash/groupBy';
@@ -9,7 +9,7 @@ import HeaderDropdown from '../HeaderDropdown';
 import SelectLang from '../SelectLang';
 import styles from './index.module.less';
 
-export default class GlobalHeaderRight extends PureComponent {
+class GlobalHeaderRight extends PureComponent {
   getNoticeData() {
     const { notices = [] } = this.props;
     if (notices.length === 0) {
@@ -71,27 +71,32 @@ export default class GlobalHeaderRight extends PureComponent {
       onMenuClick,
       onNoticeClear,
       theme,
+      t
     } = this.props;
 
-    let currentUser = {}
+    let currentUser = {
+      name: 'majid',
+      avatar: 'https://lh3.googleusercontent.com/-KyS5k_d6xMU/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3rev5pAbwefMEr-Kz4mpz02-U2g3QA/mo/photo.jpg?sz=46',
+      unreadCount: 10
+    }
     const menu = (
       <Menu className={styles.menu} selectedKeys={[]} onClick={onMenuClick}>
         <Menu.Item key="userCenter">
           <Icon type="user" />
-          {/*<FormattedMessage id="menu.account.center" defaultMessage="account center" />*/}
+          {t('menu.account.center')}
         </Menu.Item>
         <Menu.Item key="userinfo">
           <Icon type="setting" />
-          {/*<FormattedMessage id="menu.account.settings" defaultMessage="account settings" />*/}
+          {t('menu.account.settings')}
         </Menu.Item>
         <Menu.Item key="triggerError">
           <Icon type="close-circle" />
-          {/*<FormattedMessage id="menu.account.trigger" defaultMessage="Trigger Error" />*/}
+          {t('menu.account.trigger')}
         </Menu.Item>
         <Menu.Divider />
         <Menu.Item key="logout">
           <Icon type="logout" />
-          {/*<FormattedMessage id="menu.account.logout" defaultMessage="logout" />*/}
+          {t('menu.account.logout')}
         </Menu.Item>
       </Menu>
     );
@@ -105,7 +110,7 @@ export default class GlobalHeaderRight extends PureComponent {
       <div className={className}>
         <HeaderSearch
           className={`${styles.action} ${styles.search}`}
-          // placeholder={formatMessage({ id: 'component.globalHeader.search' })}
+          placeholder={t('app.footer.welcome')}
           // dataSource={[
           //   formatMessage({ id: 'component.globalHeader.search.example1' }),
           //   formatMessage({ id: 'component.globalHeader.search.example2' }),
@@ -119,7 +124,7 @@ export default class GlobalHeaderRight extends PureComponent {
           }}
         />
         <Tooltip 
-          // title={formatMessage({ id: 'component.globalHeader.help' })}
+          title={t('app.footer.welcome')}
         >
           <a
             target="_blank"
@@ -138,16 +143,16 @@ export default class GlobalHeaderRight extends PureComponent {
             this.changeReadState(item, tabProps);
           }}
           loading={fetchingNotices}
-          // locale={{
-          //   emptyText: formatMessage({ id: 'component.noticeIcon.empty' }),
-          //   clear: formatMessage({ id: 'component.noticeIcon.clear' }),
-          //   viewMore: formatMessage({ id: 'component.noticeIcon.view-more' }),
-          //   notification: formatMessage({ id: 'component.globalHeader.notification' }),
-          //   message: formatMessage({ id: 'component.globalHeader.message' }),
-          //   event: formatMessage({ id: 'component.globalHeader.event' }),
-          // }}
+          locale={{
+            emptyText: t('menu.account.center'),
+            clear: t('menu.account.settings'),
+            viewMore: t('menu.account.trigger'),
+            notification: t('menu.account.logout'),
+            message: t('menu.account.trigger'),
+            event: t('menu.account.settings'),
+          }}
           onClear={onNoticeClear}
-          onPopupVisibleChange={onNoticeVisibleChange}
+          // onPopupVisibleChange={onNoticeVisibleChange}
           onViewMore={() => message.info('Click on view more')}
           clearClose
         >
@@ -196,3 +201,6 @@ export default class GlobalHeaderRight extends PureComponent {
     );
   }
 }
+
+
+export default withTranslation()(GlobalHeaderRight)

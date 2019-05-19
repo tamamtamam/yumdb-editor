@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 // import { formatMessage, setLocale, getLocale } from 'umi-plugin-react/locale';
+import i18n from '../../locales/i18n';
 import { Menu, Icon } from 'antd';
 import classNames from 'classnames';
 import HeaderDropdown from '../HeaderDropdown';
@@ -8,23 +9,20 @@ import styles from './index.less';
 export default class SelectLang extends PureComponent {
   changeLang = ({ key }) => {
     // setLocale(key);
+    i18n.changeLanguage(key)
   };
 
   render() {
     const { className } = this.props;
-    const selectedLang = null//getLocale();
-    const locales = ['zh-CN', 'zh-TW', 'en-US', 'pt-BR'];
+    const selectedLang = i18n.language
+    const locales = ['en-US', 'fa-IR'];
     const languageLabels = {
-      'zh-CN': '简体中文',
-      'zh-TW': '繁体中文',
       'en-US': 'English',
-      'pt-BR': 'Português',
+      'fa-IR': 'فارسی',
     };
     const languageIcons = {
-      'zh-CN': '🇨🇳',
-      'zh-TW': '🇭🇰',
       'en-US': '🇬🇧',
-      'pt-BR': '🇧🇷',
+      'fa-IR': '🇮🇷',
     };
     const langMenu = (
       <Menu className={styles.menu} selectedKeys={[selectedLang]} onClick={this.changeLang}>
