@@ -105,18 +105,19 @@ export default class BasicLayout extends React.Component {
 
   render() {
     const {
-      navTheme,
       layout: PropsLayout,
       children,
       isMobile,
-      fixedHeader,
       // Majid :)
+      // fixedHeader,
+      // navTheme,
       // location: { pathname },
       // menuData,
       // breadcrumbNameMap,
     } = this.props;
-
     // Majid :)
+    let fixedHeader = true
+    let navTheme = 'dark'
     let menuData = [ 
         {   
             icon: "dashboard",
@@ -191,7 +192,7 @@ export default class BasicLayout extends React.Component {
             isMobile={isMobile}
             {...this.props}
             // Majid :)
-            setting={ {navTheme:'', layout:'', fixedHeader:''} }
+            setting={ {navTheme, layout:'sidemenu', fixedHeader} }
           />
           <Content className={styles.content} style={contentStyle}>
             {children}

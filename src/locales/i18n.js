@@ -10,7 +10,8 @@ i18n
     .use(initReactI18next)
     .init({
         resources,
-        lng: "en",
+        fallbackLng: 'en',
+    	fallbacks: true,
 
         keySeparator: true, //true if you use in messages.welcome format
         interpolation: {

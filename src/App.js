@@ -2,7 +2,7 @@ import React from 'react';
 import BasicLayout from './layouts/BasicLayout';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import routes from './config/router.config';
-import styles from './App.less';
+import './App.less';
 
 const App = () => (
 	<Router>

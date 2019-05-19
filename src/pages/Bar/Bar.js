@@ -6,7 +6,7 @@ import { withTranslation } from 'react-i18next';
 const Bar = ({ t, history }) => {
     return ( 
     	<div>
-    		<h1>Bar</h1>
+    		<h1>Bar - {t('app.footer.welcome')}</h1>
     		<div onClick={() => history.goBack()}>Back</div>
     		<div>
     			<Link to='/foo'>foo</Link>

@@ -4,7 +4,7 @@ import { Icon, Tabs, Badge, Spin } from 'antd';
 import classNames from 'classnames';
 import HeaderDropdown from '../HeaderDropdown';
 import List from './NoticeList';
-import styles from './index.less';
+import styles from './index.module.less';
 
 const { TabPane } = Tabs;
 
