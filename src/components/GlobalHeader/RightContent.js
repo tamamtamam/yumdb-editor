@@ -110,7 +110,7 @@ class GlobalHeaderRight extends PureComponent {
       <div className={className}>
         <HeaderSearch
           className={`${styles.action} ${styles.search}`}
-          // placeholder={formatMessage({ id: 'component.globalHeader.search' })}
+          placeholder={t('app.footer.welcome')}
           // dataSource={[
           //   formatMessage({ id: 'component.globalHeader.search.example1' }),
           //   formatMessage({ id: 'component.globalHeader.search.example2' }),
@@ -124,7 +124,7 @@ class GlobalHeaderRight extends PureComponent {
           }}
         />
         <Tooltip 
-          // title={formatMessage({ id: 'component.globalHeader.help' })}
+          title={t('app.footer.welcome')}
         >
           <a
             target="_blank"
@@ -143,14 +143,14 @@ class GlobalHeaderRight extends PureComponent {
             this.changeReadState(item, tabProps);
           }}
           loading={fetchingNotices}
-          // locale={{
-          //   emptyText: formatMessage({ id: 'component.noticeIcon.empty' }),
-          //   clear: formatMessage({ id: 'component.noticeIcon.clear' }),
-          //   viewMore: formatMessage({ id: 'component.noticeIcon.view-more' }),
-          //   notification: formatMessage({ id: 'component.globalHeader.notification' }),
-          //   message: formatMessage({ id: 'component.globalHeader.message' }),
-          //   event: formatMessage({ id: 'component.globalHeader.event' }),
-          // }}
+          locale={{
+            emptyText: t('menu.account.center'),
+            clear: t('menu.account.settings'),
+            viewMore: t('menu.account.trigger'),
+            notification: t('menu.account.logout'),
+            message: t('menu.account.trigger'),
+            event: t('menu.account.settings'),
+          }}
           onClear={onNoticeClear}
           // onPopupVisibleChange={onNoticeVisibleChange}
           onViewMore={() => message.info('Click on view more')}
