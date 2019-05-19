@@ -7,7 +7,7 @@ import NoticeIcon from '../NoticeIcon';
 import HeaderSearch from '../HeaderSearch';
 import HeaderDropdown from '../HeaderDropdown';
 import SelectLang from '../SelectLang';
-import styles from './index.less';
+import styles from './index.module.less';
 
 export default class GlobalHeaderRight extends PureComponent {
   getNoticeData() {

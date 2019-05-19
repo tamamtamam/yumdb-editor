@@ -5,7 +5,7 @@ import { Menu, Icon } from 'antd';
 import { urlToList } from '../_utils/pathTools';
 import { getMenuMatches } from './SiderMenuUtils';
 import { isUrl } from '../../utils/utils';
-import styles from './index.less';
+import styles from './index.module.less';
 import IconFont from '../IconFont';
 
 const { SubMenu } = Menu;

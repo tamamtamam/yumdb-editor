@@ -1,17 +1,18 @@
 import React, { Suspense } from 'react';
 import { Layout } from 'antd';
 import DocumentTitle from 'react-document-title';
-//import { connect } from 'dva';
 import { ContainerQuery } from 'react-container-query';
 import classNames from 'classnames';
-// import Media from 'react-media';
 import logo from '../assets/logo.svg';
 import Footer from './Footer';
 import Header from './Header';
 import Context from './MenuContext';
 import SiderMenu from '../components/SiderMenu';
 import getPageTitle from '../utils/getPageTitle';
-import styles from './BasicLayout.less';
+import styles from './BasicLayout.module.less';
+// Majid :)
+// import { connect } from 'dva';
+// import Media from 'react-media';
 
 // lazy load SettingDrawer
 // const SettingDrawer = React.lazy(() => import('../components/SettingDrawer'));
@@ -45,10 +46,12 @@ const query = {
 
 export default class BasicLayout extends React.Component {
   componentDidMount() {
+    // Majid :)
     // const {
     //   dispatch,
     //   route: { routes, path, authority },
     // } = this.props;
+
     // dispatch({
     //   type: 'user/fetchCurrent',
     // });
@@ -80,6 +83,7 @@ export default class BasicLayout extends React.Component {
   };
 
   handleMenuCollapse = collapsed => {
+    // Majid :)
     // const { dispatch } = this.props;
     // dispatch({
     //   type: 'global/changeLayoutCollapsed',
@@ -104,13 +108,15 @@ export default class BasicLayout extends React.Component {
       navTheme,
       layout: PropsLayout,
       children,
-      // location: { pathname },
       isMobile,
+      fixedHeader,
+      // Majid :)
+      // location: { pathname },
       // menuData,
       // breadcrumbNameMap,
-      fixedHeader,
     } = this.props;
 
+    // Majid :)
     let menuData = [ { path: '/foo' } ]
     let breadcrumbNameMap = {}
     let pathname = {}
@@ -128,11 +134,10 @@ export default class BasicLayout extends React.Component {
             isMobile={isMobile}
             {...this.props}
 
+            // Majid :)
             menuData={menuData}
             breadcrumbNameMap={breadcrumbNameMap}
-            pathname={pathname}
             location={{pathname: '/foo'}}
-
           />
         )}
         <Layout
@@ -147,6 +152,7 @@ export default class BasicLayout extends React.Component {
             logo={logo}
             isMobile={isMobile}
             {...this.props}
+            // Majid :)
             setting={ {navTheme:'', layout:'', fixedHeader:''} }
           />
           <Content className={styles.content} style={contentStyle}>
